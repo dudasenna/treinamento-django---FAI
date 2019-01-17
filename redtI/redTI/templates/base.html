@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Rediti</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'imagens/fogo.png' %}">
+    <link href = "{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        {% block body %}
+        {% endblock %}
+    </div>
+    <footer>
+        <span>Rediti feito na FAI</span>
+    </footer>
+</body>
+
+</html>

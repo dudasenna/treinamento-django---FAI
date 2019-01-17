@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+{{ subirediti.title }}
+<a href="{% url 'subs:crete_thread' %}?sub={{ subrediti.pk }}">Nova thread</a>
+
+{% for thread in subrediti.threads.all %}
+<a href="{% url 'subs:thread' thread.pk %}"> {{ thread.tittle }} </a>
+<a href="{% url 'users:profile' thread.author.pk %}"> {{ thread.author }} </a>
+{{ thread.created }}
+{% empty %}
+Ainda não tem nenhuma thread
+{% endfor %}
+{% endblock %}

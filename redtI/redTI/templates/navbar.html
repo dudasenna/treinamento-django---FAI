@@ -1,0 +1,16 @@
+<div class="navbar">
+    <a href=""><img src="">Logo aqui</a>
+    <div class = "links-area">
+        <ul class = links-list>
+            <a href="{% url 'core:home' %}"><li>Home</li></a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'users:profile' user.pk %}"><li>Profile</li></a>
+                <a href="{% url 'subs:subreditis' %}"><li>Subs</li></a>
+                <a href="{% url 'users:logout'%}"><li>Logout</li></a>
+            {% else %}
+            <a class="nav-link" href="{% url 'users:signup' %}">Cadastro</a> |
+                <a href="{% url 'users:login'%}"><li>Login</li></a>
+            {% endif %}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+<form method="post">
+    {% csrf_token %}<!--necessario para o django reconhecer o form-->
+    <fieldset>
+        {{ form.non_field_errors }} {% for field in form %}
+        <div>
+            {{ field.label_tag }} {{ field }} {{ field.error }}
+        </div>
+        {% endfor %}
+        <button type="submit">Login</button>
+    </fieldset>
+    <a href="">Criar uma conta</a>
+</form>
+{% endblock %}

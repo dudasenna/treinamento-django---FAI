@@ -1,0 +1,24 @@
+1) Lembre de sempre ao baixar o projeto fazer as migrações.
+    -python manage.py makemigrations
+    -python manage.py migrate
+2) Crie um superuser antes de rodar.
+    -python manage.py createsuperuser
+3) Usar abstractbaseuser para criar usuários customizados
+4) Tente usar o pipenv
+    -pipenv shell para ativar
+    -pipenv install algo para instalar
+    -o pipenv usa o arquivo pipenvlock para reservar o que foi instalado
+5) Use o ipdb serve como um debug, use na linha onde você
+imagina que está dando erro.
+6) Use o Python manage.py startapp user(dentro da pasta do projeto).
+7) AbstractModel não possui tabelas criadas para ele.
+    -Usado na class meta (abstract=True)
+8) created = models.DateTimeField(auto_now_add=True)
+    -auto_now_add só quando é criado
+    -auto_now sempre que é editado
+9) slug = models.SlugField() usado para deixar o url mais arrumado
+10) Ao usar forign key ou many to many, use related_name='nome', para ajudar a idenficiar ao usar o objeto nas querys
+11) Use assim para inserir coisas customizáveis no def __str__
+    -("{} - {} - {}").format(self.id, self.thread, self.author)
+12) search_fields = ['title', 'slug'] perceba que se desejarmos usar criador, deveremos usar criador__username, pois ele é uma foreign key.
+13) ccbv é um site para estudar views, é top.

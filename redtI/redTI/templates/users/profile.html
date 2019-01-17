@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+email: {{ user.email }}
+username: {{ user.username }}
+description: {{ user.description }}
+karma: {{ user.karma }}
+avatar: <img src="{{ user.avatar.url }}">
+
+<div>
+<h1>Thread</h1>
+{% for thread in user.threads.all %}
+<a href="">{{ thread.title }} </a>
+{% empty %}
+aww, usuario ainda nao tem threads
+{% endfor %}
+
+</div>
+
+{% endblock %}

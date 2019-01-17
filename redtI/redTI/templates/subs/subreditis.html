@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+<a href="{% url 'subs:create_sub' %}">Create sub</a>
+{% for sub in subreditis %}
+<a href="{% url 'subs:subrediti' %}">{{ sub.title }}</a>
+{% empty %}
+esse site ainda não tem subreditis
+{% end for %}
+{% endblock %}
